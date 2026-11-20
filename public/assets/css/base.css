@@ -1,0 +1,354 @@
+/* =====================================================================
+ * Ortak tema: tüm sayfalarda kullanılan renkler, yazı tipi, üst menü,
+ * alt bilgi, butonlar, formlar ve bildirimler.
+ * =================================================================== */
+
+:root {
+  --zemin: #fde2e4;         /* sayfa arka planı */
+  --pembe: #f9c5d5;         /* üst menü / alt bilgi */
+  --pembe-koyu: #e295b5;    /* hover, ikincil vurgu */
+  --vurgu: #e0628f;         /* butonlar, başlıklar */
+  --vurgu-koyu: #c2457a;    /* buton hover */
+  --kart: #ffffff;
+  --kart-acik: #fff5f8;
+  --cizgi: #f6c9d8;
+  --metin: #333333;
+  --metin-soluk: #6b6b6b;
+  --basari: #2e7d32;
+  --hata: #c62828;
+  --golge: 0 4px 14px rgba(224, 98, 143, 0.12);
+  --radius: 12px;
+  --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  color: var(--metin);
+  background-color: var(--zemin);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+a {
+  color: var(--vurgu-koyu);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- Üst menü ---------- */
+.site-header {
+  background-color: var(--pembe);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.site-logo img {
+  height: 70px;
+  display: block;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: var(--metin);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.aktif {
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.site-nav .nav-cikis {
+  background-color: var(--kart);
+}
+
+.site-nav .nav-cikis:hover {
+  background-color: var(--pembe-koyu);
+  color: #fff;
+}
+
+.nav-ikon {
+  width: 22px;
+  height: 22px;
+}
+
+.site-icerik {
+  flex: 1;
+}
+
+/* ---------- Alt bilgi ---------- */
+.site-footer {
+  background-color: var(--pembe);
+  text-align: center;
+  padding: 14px 16px;
+  margin-top: 40px;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Sayfa başlıkları / kapsayıcı ---------- */
+.kapsayici {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.sayfa-basligi {
+  text-align: center;
+  color: var(--vurgu-koyu);
+  margin: 0 0 8px;
+}
+
+.sayfa-alt-basligi {
+  text-align: center;
+  color: var(--metin-soluk);
+  margin: 0 0 28px;
+  font-weight: normal;
+}
+
+/* ---------- Kartlar ---------- */
+.kart {
+  background-color: var(--kart);
+  border-radius: var(--radius);
+  box-shadow: var(--golge);
+  padding: 24px;
+}
+
+.kart h2 {
+  margin-top: 0;
+  color: var(--vurgu-koyu);
+}
+
+/* ---------- Butonlar ---------- */
+.btn,
+button {
+  display: inline-block;
+  padding: 9px 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--vurgu);
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover,
+button:hover {
+  background-color: var(--vurgu-koyu);
+}
+
+.btn-ikincil {
+  background-color: var(--kart);
+  color: var(--vurgu-koyu);
+  border: 1px solid var(--vurgu);
+}
+
+.btn-ikincil:hover {
+  background-color: var(--vurgu);
+  color: #fff;
+}
+
+.btn-tam {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* ---------- Formlar ---------- */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group small {
+  color: var(--metin-soluk);
+  font-weight: normal;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cizgi);
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--metin);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--vurgu);
+  box-shadow: 0 0 0 3px rgba(224, 98, 143, 0.15);
+}
+
+/* ---------- Arama kutusu (anasayfa ve arama sayfası) ---------- */
+.arama-formu {
+  display: flex;
+  gap: 12px;
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: 16px;
+  background: var(--kart);
+  border-radius: var(--radius);
+  box-shadow: var(--golge);
+}
+
+.arama-formu select {
+  width: auto;
+  flex: 0 0 150px;
+}
+
+.arama-formu input {
+  flex: 1;
+}
+
+/* ---------- Sayfa içi mesajlar (sunucudan gelen) ---------- */
+.flash,
+.error-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.flash-basari {
+  background: #e3f4e4;
+  color: var(--basari);
+}
+
+.flash-hata,
+.error-message {
+  background: #fdecea;
+  color: var(--hata);
+}
+
+/* ---------- Bildirimler (JavaScript ile gösterilen) ---------- */
+.bildirimler {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.bildirim {
+  max-width: 360px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--kart);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid var(--basari);
+  cursor: pointer;
+  pointer-events: auto;
+  animation: bildirim-gir 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.bildirim-hata {
+  border-left-color: var(--hata);
+}
+
+.bildirim.kapaniyor {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+@keyframes bildirim-gir {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width: 700px) {
+  .site-header {
+    flex-direction: column;
+    padding: 10px 16px;
+  }
+
+  .site-logo img {
+    height: 56px;
+  }
+
+  .site-nav {
+    justify-content: center;
+  }
+
+  .site-nav a {
+    padding: 6px 10px;
+  }
+
+  .kapsayici {
+    padding: 24px 16px;
+  }
+
+  .arama-formu {
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .arama-formu select {
+    width: 100%;
+    flex-basis: auto;
+  }
+}

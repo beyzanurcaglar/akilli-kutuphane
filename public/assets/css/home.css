@@ -1,0 +1,151 @@
+/* Anasayfa */
+
+.welcome {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.welcome h1 {
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+.welcome p {
+  font-size: 18px;
+  margin: 0;
+  color: var(--metin-soluk);
+}
+
+/* ---------- Yeni gelenler slider'ı ---------- */
+.slider-container {
+  overflow: hidden;
+  background: var(--kart);
+  padding: 20px 0;
+  margin-top: 36px;
+  border-top: 2px solid var(--pembe);
+  border-bottom: 2px solid var(--pembe);
+}
+
+.slider-track {
+  display: flex;
+  width: fit-content;
+  gap: 40px;
+  align-items: center;
+  padding-left: 100%;
+  animation: slideLeft 30s linear infinite;
+}
+
+.slider-container:hover .slider-track {
+  animation-play-state: paused;
+}
+
+.slide {
+  text-align: center;
+  min-width: 140px;
+  max-width: 140px;
+}
+
+.slide img {
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.slide p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.banner-slide h2 {
+  margin: 0 0 6px;
+  color: var(--vurgu-koyu);
+}
+
+.banner-slide p {
+  font-weight: normal;
+  color: var(--metin-soluk);
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* ---------- İstatistikler ---------- */
+.istatistikler {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 40px 20px;
+}
+
+.istatistik-kutu {
+  width: 220px;
+  padding: 24px 12px;
+  text-align: center;
+  background: var(--kart);
+  border-radius: var(--radius);
+  box-shadow: var(--golge);
+  transition: transform 0.2s ease;
+}
+
+.istatistik-kutu:hover {
+  transform: translateY(-4px);
+}
+
+.istatistik-kutu img {
+  width: 56px;
+  height: 56px;
+}
+
+.istatistik-kutu h3 {
+  margin: 10px 0 4px;
+  font-size: 18px;
+  color: var(--vurgu-koyu);
+}
+
+.istatistik-kutu p {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ---------- Hakkımızda / İletişim ---------- */
+.bilgi-bolumu {
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.bilgi-bolumu h2 {
+  font-size: 26px;
+  color: var(--vurgu-koyu);
+  margin: 0 0 16px;
+}
+
+.bilgi-bolumu p {
+  max-width: 700px;
+  margin: 0 auto 8px;
+  font-size: 16px;
+}
+
+.iletisim-ikon {
+  width: 48px;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width: 700px) {
+  .welcome h1 {
+    font-size: 26px;
+  }
+}

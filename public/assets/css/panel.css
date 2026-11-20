@@ -1,0 +1,179 @@
+/* Üye ve admin panelleri */
+
+.panel {
+  display: flex;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px;
+}
+
+/* ---------- Sol menü ---------- */
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: var(--kart);
+  border-radius: var(--radius);
+  box-shadow: var(--golge);
+  padding: 22px;
+}
+
+.sidebar-profil {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.sidebar-profil img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-profil strong,
+.sidebar-profil small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.sidebar-profil small {
+  color: var(--metin-soluk);
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 11px 16px;
+  border-radius: 8px;
+  background: var(--kart-acik);
+  color: var(--metin);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: var(--pembe);
+}
+
+.sidebar-link.aktif {
+  background: var(--vurgu);
+  color: #fff;
+}
+
+/* ---------- İçerik ---------- */
+.panel-icerik {
+  flex: 1;
+  min-width: 0;
+}
+
+.panel-icerik > h2 {
+  margin-top: 0;
+  color: var(--vurgu-koyu);
+}
+
+.panel-icerik .kart {
+  max-width: 640px;
+}
+
+/* ---------- Tablolar ---------- */
+.tablo-kapsayici {
+  overflow-x: auto;
+  margin-bottom: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--golge);
+}
+
+table.kitap-tablo {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--kart);
+}
+
+table.kitap-tablo th,
+table.kitap-tablo td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--cizgi);
+}
+
+table.kitap-tablo th {
+  background: var(--vurgu);
+  color: #fff;
+  font-weight: 600;
+}
+
+table.kitap-tablo tr:last-child td {
+  border-bottom: none;
+}
+
+table.kitap-tablo tr:hover td {
+  background: var(--kart-acik);
+}
+
+.kart table.kitap-tablo {
+  margin-bottom: 16px;
+  border: 1px solid var(--cizgi);
+}
+
+.kitap-tablo button {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.kitap-tablo form {
+  margin: 0;
+}
+
+/* ---------- Form yardımcıları ---------- */
+.satir {
+  display: flex;
+  gap: 10px;
+}
+
+.satir input {
+  flex: 1;
+}
+
+.kapak img {
+  max-width: 150px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+/* ---------- Mobil ---------- */
+@media (max-width: 960px) {
+  .panel {
+    flex-direction: column;
+    padding: 20px 16px;
+  }
+
+  .sidebar {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .sidebar-profil img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar-link {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

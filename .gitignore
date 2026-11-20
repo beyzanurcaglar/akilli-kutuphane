@@ -1,0 +1,12 @@
+# Gerçek yapılandırma (veritabanı şifresi içerir) - örneği: config/config.example.php
+config/config.php
+
+# İşletim sistemi / editör dosyaları
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Loglar
+*.log
